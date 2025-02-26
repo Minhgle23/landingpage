@@ -13,10 +13,27 @@
             box-sizing: border-box;
         }
         header {
-            text-align: center;
-            padding: 20px;
             background-color: #f8f8f8;
+            padding: 20px;
         }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Đẩy logo sang phải */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            object-fit: contain; /* Giữ nguyên tỷ lệ logo */
+        }
+
         .product-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -91,12 +108,20 @@
             margin-bottom: 10px;
         }
 
+        
+        
+
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Shop Đặc Sản Việt</h1>
+        <div class="header-container">
+            <h1>Shop Đặc Sản Việt</h1>
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
     </header>
+    
     
     <section class="product-list">
         <div class="product" onclick="showProductDetails('Măng Khô', `Măng khô là sản phẩm được chế biến từ măng tươi thông qua quá trình phơi hoặc sấy khô để bảo quản được lâu hơn.<br><br>
