@@ -70,6 +70,27 @@
                 width: 90%;
             }
         }
+
+        .footer-benefits {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .footer-benefits div {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+
+        .footer-benefits img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -232,7 +253,30 @@
                 <p>Đặc sản Sapa</p>
         </div>
     </section>
-    
+    <footer>
+        <div class="footer-benefits">
+            <div>
+                <img src="support-1.png" alt="Free Shipping">
+                <h3>Free Shipping</h3>
+                <p>Free shipping on all orders</p>
+            </div>
+            <div>
+                <img src="support-2.png" alt="Support 24/7">
+                <h3>Support 24/7</h3>
+                <p>Contact us anytime</p>
+            </div>
+            <div>
+                <img src="support-3.png" alt="Money Return">
+                <h3>Money Return</h3>
+                <p>30 days money back guarantee</p>
+            </div>
+            <div>
+                <img src="support-4.png" alt="Order Discount">
+                <h3>Order Discount</h3>
+                <p>Discount on bulk orders</p>
+            </div>
+        </div>
+    </footer>
     <div id="productModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
