@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Đặc Sản Việt</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .product {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 15px;
+            cursor: pointer;
+            background: #fff;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 90%;
+            width: 600px;
+            text-align: left;
+            border-radius: 10px;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .close {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop Đặc Sản Việt</h1>
+    </header>
+    
+    <section class="product-list">
+        <div class="product" onclick="showProductDetails('Măng Khô', `Măng khô là sản phẩm được chế biến từ măng tươi thông qua quá trình phơi hoặc sấy khô để bảo quản được lâu hơn.<br><br>
+        <strong>1. Nguyên liệu và quy trình chế biến</strong><br>
+        - Nguyên liệu: Măng khô thường được làm từ các loại măng như măng tre, măng nứa, măng vầu, hoặc măng mai.<br>
+        - Quy trình chế biến: Măng tươi sau khi thu hoạch sẽ được bóc vỏ, rửa sạch, luộc chín, thái lát hoặc để nguyên, sau đó phơi nắng hoặc sấy khô.<br><br>
+        <strong>2. Đặc điểm</strong><br>
+        - Màu sắc: Măng khô có màu vàng nhạt hoặc nâu nhạt.<br>
+        - Mùi vị: Mùi thơm đặc trưng của măng, vị ngọt tự nhiên, hơi dai khi chế biến.<br>
+        - Thời gian bảo quản: 6 tháng - 1 năm ở nơi khô ráo.<br><br>
+        <strong>3. Công dụng</strong><br>
+        - Là nguyên liệu cho các món ăn như măng hầm chân giò, măng xào, canh măng, bún măng vịt...<br>
+        - Chứa nhiều chất xơ, vitamin và khoáng chất, tốt cho sức khỏe.<br><br>
+        <strong>4. Cách sử dụng</strong><br>
+        - Ngâm nước 4-6 tiếng hoặc qua đêm trước khi chế biến.<br>
+        - Rửa sạch, luộc lại để loại bỏ vị đắng và tạp chất.<br><br>
+        <strong>5. Lưu ý</strong><br>
+        - Chọn măng khô có màu sắc tự nhiên, không bị mốc, mùi lạ.<br>
+        - Bảo quản trong túi kín, tránh ẩm ướt và ánh nắng trực tiếp.<br>`, 'mangkho.jpg')">
+            <img src="mangkho.jpg" alt="Măng Khô">
+            <h2>Măng Khô</h2>
+            <p>Đặc sản Tây Bắc</p>
+        </div>
+        
+        <div class="product" onclick="showProductDetails('Ô Mai', `Ô mai là một món ăn vặt truyền thống của Việt Nam, được làm từ các loại trái cây hoặc củ quả ướp muối, phơi khô và tẩm ướp gia vị.<br><br>
+        <strong>1. Nguyên liệu và quy trình chế biến</strong><br>
+        - Nguyên liệu: Mơ, me, sấu, chanh, cóc, xoài, gừng, khế.<br>
+        - Quy trình chế biến: Rửa sạch, ngâm muối, phơi khô, tẩm ướp với đường, muối, ớt, gừng.<br><br>
+        <strong>2. Đặc điểm</strong><br>
+        - Màu sắc: Vàng, nâu, đỏ, xanh.<br>
+        - Mùi vị: Chua ngọt, mặn, cay.<br>
+        - Kết cấu: Dai, giòn, mềm.<br><br>
+        <strong>3. Công dụng</strong><br>
+        - Kích thích tiêu hóa, giảm cảm giác buồn nôn, giải nhiệt.<br>
+        - Một số loại như ô mai gừng giúp làm ấm cơ thể.<br><br>
+        <strong>4. Cách bảo quản</strong><br>
+        - Để trong hộp kín, nơi khô ráo, tránh ẩm mốc.<br><br>
+        <strong>5. Lưu ý khi sử dụng</strong><br>
+        - Sử dụng vừa phải để tránh ảnh hưởng đến dạ dày.<br>
+        - Chọn mua từ cơ sở uy tín để đảm bảo chất lượng.<br>`, 'omai.jpg')">
+            <img src="omai.jpg" alt="Ô Mai">
+            <h2>Ô Mai</h2>
+            <p>Đặc sản Hà Nội</p>
+        </div>
+
+        <div class="product" onclick="showProductDetails('Mộc Nhĩ', `Mộc nhĩ, còn được gọi là nấm mèo hoặc nấm tai mèo, là một loại nấm ăn được phổ biến trong ẩm thực châu Á, đặc biệt là ở Việt Nam, Trung Quốc và các nước Đông Nam Á.<br><br>
+        <strong>1. Đặc điểm</strong><br>
+        - Hình dạng: Giống như tai người hoặc tai mèo, bề mặt mịn và màng mỏng.<br>
+        - Màu sắc: Nâu nhạt hoặc đen (tươi), đen sẫm (khô).<br>
+        - Kết cấu: Giòn và dai (tươi), cứng khi khô, cần ngâm nước để mềm.<br><br>
+        <strong>2. Phân loại</strong><br>
+        - Mộc nhĩ đen (Auricularia auricula-judae).<br>
+        - Mộc nhĩ trắng (Tremella fuciformis), thường dùng trong món chè.<br><br>
+        <strong>3. Giá trị dinh dưỡng</strong><br>
+        - Chứa nhiều chất xơ, vitamin B2, sắt, canxi, photpho.<br>
+        - Ít calo, phù hợp với chế độ ăn kiêng.<br><br>
+        <strong>4. Công dụng</strong><br>
+        - Dùng trong nhiều món ăn như canh, súp, xào, nhồi thịt.<br>
+        - Hỗ trợ tiêu hóa, giảm cholesterol, cải thiện tuần hoàn máu.<br>
+        - Có tính kháng viêm và chống oxy hóa.<br><br>
+        <strong>5. Cách sử dụng</strong><br>
+        - Ngâm nước ấm 20-30 phút để nở mềm, rửa sạch, cắt bỏ chân cứng.<br>
+        - Mộc nhĩ tươi có thể dùng ngay sau khi rửa sạch.<br><br>
+        <strong>6. Bảo quản</strong><br>
+        - Mộc nhĩ khô: Bảo quản nơi khô ráo, tránh ẩm ướt.<br>
+        - Mộc nhĩ tươi: Bảo quản trong tủ lạnh, dùng trong vài ngày.<br><br>
+        <strong>7. Lưu ý</strong><br>
+        - Không ăn sống để tránh khó tiêu, dị ứng.<br>
+        - Chọn mua từ nguồn uy tín để đảm bảo an toàn thực phẩm.<br>`, 'mocnhi.jpeg')">
+            <img src="mocnhi.jpeg" alt="Mộc Nhĩ">
+            <h2>Mộc Nhĩ</h2>
+            <p>Đặc sản Việt Nam</p>
+        </div>
+
+        <div class="product" onclick="showProductDetails('Nấm Hương', `Nấm hương, còn được gọi là nấm đông cô (*Lentinula edodes*), là một loại nấm ăn được phổ biến trong ẩm thực châu Á.<br><br>
+            <strong>1. Đặc điểm</strong><br>
+            - Mũ nấm rộng, màu nâu nhạt đến nâu sẫm.<br>
+            - Mùi thơm đặc trưng, vị đậm đà.<br>
+            - Khi khô cần ngâm nước để nở mềm.<br><br>
+            <strong>2. Phân loại</strong><br>
+            - Nấm hương tươi, nấm hương khô.<br><br>
+            <strong>3. Giá trị dinh dưỡng</strong><br>
+            - Giàu protein, vitamin B, D, khoáng chất.<br>
+            - Chống oxy hóa, hỗ trợ miễn dịch.<br><br>
+            <strong>4. Công dụng</strong><br>
+            - Dùng trong súp, xào, hầm, món chay.<br>
+            - Giảm cholesterol, tốt cho tim mạch.<br><br>
+            <strong>5. Cách sử dụng</strong><br>
+            - Ngâm nấm khô 20-30 phút trước khi chế biến.<br>
+            - Nấm tươi rửa sạch, dùng ngay.<br><br>
+            <strong>6. Bảo quản</strong><br>
+            - Nấm khô bảo quản nơi khô ráo.<br>
+            - Nấm tươi giữ trong tủ lạnh.<br>`, 'namhuong.png')">
+                <img src="namhuong.png" alt="Nấm Hương">
+                <h2>Nấm Hương</h2>
+                <p>Đặc sản Việt Nam</p>
+        </div>
+
+        <div class="product" onclick="showProductDetails('Bánh Đậu Xanh', `Bánh đậu xanh là một loại bánh truyền thống của Việt Nam, được làm từ đậu xanh và đường.<br><br>
+            <strong>1. Nguyên liệu và chế biến</strong><br>
+            - Đậu xanh, đường, dầu ăn hoặc mỡ heo.<br>
+            - Đậu xanh ngâm, hấp chín, nghiền nhuyễn, trộn đường, sên đặc, đổ khuôn.<br><br>
+            <strong>2. Đặc điểm</strong><br>
+            - Hình dạng: Vuông hoặc chữ nhật nhỏ.<br>
+            - Màu sắc: Vàng nhạt.<br>
+            - Mùi vị: Ngọt thanh, béo ngậy.<br><br>
+            <strong>3. Các biến thể</strong><br>
+            - Truyền thống, nhân thập cẩm, phủ sô cô la.<br><br>
+            <strong>4. Công dụng</strong><br>
+            - Món ăn vặt, quà biếu.<br>
+            - Giàu chất xơ, protein, hỗ trợ tiêu hóa.<br><br>
+            <strong>5. Bảo quản</strong><br>
+            - Để nơi khô ráo, tránh ẩm.<br>
+            - Tránh tiếp xúc không khí ẩm.<br><br>
+            <strong>6. Lưu ý</strong><br>
+            - Ăn lượng vừa phải để tránh ảnh hưởng sức khỏe.<br>
+            - Chọn mua từ cơ sở uy tín.<br>`, 'banhdauxanh.jpg')">
+                <img src="banhdauxanh.jpg" alt="Bánh Đậu Xanh">
+                <h2>Bánh Đậu Xanh</h2>
+                <p>Đặc sản Việt Nam</p>
+        </div>
+
+        <div class="product" onclick="showProductDetails('Cao Atiso Sapa', `Cao atiso Sapa là một sản phẩm được chiết xuất từ cây atiso (Cynara scolymus), một loại cây có nguồn gốc từ vùng Địa Trung Hải và được trồng nhiều ở Sapa, Việt Nam.<br><br>
+            <strong>1. Nguyên liệu và quy trình sản xuất</strong><br>
+            - Nguyên liệu: Lá và hoa atiso tươi, được thu hái từ vùng Sapa.<br>
+            - Quy trình sản xuất: Rửa sạch, sấy khô, chiết xuất, cô đặc và đóng gói.<br><br>
+            <strong>2. Đặc điểm</strong><br>
+            - Màu sắc: Nâu đen hoặc nâu sẫm.<br>
+            - Mùi vị: Đắng nhẹ, hơi ngọt, thơm đặc trưng.<br>
+            - Dạng bào chế: Cao lỏng, cao đặc hoặc viên nang.<br><br>
+            <strong>3. Thành phần hóa học</strong><br>
+            - Cynarin: Bảo vệ gan, hỗ trợ tiêu hóa.<br>
+            - Flavonoid: Chống oxy hóa, kháng viêm.<br>
+            - Inulin: Chất xơ hòa tan, tốt cho tiêu hóa.<br>
+            - Vitamin và khoáng chất: Vitamin C, B, kali, magie.<br><br>
+            <strong>4. Công dụng</strong><br>
+            - Hỗ trợ gan, giải độc gan, hỗ trợ điều trị bệnh gan.<br>
+            - Kích thích tiêu hóa, giảm đầy bụng, khó tiêu.<br>
+            - Chống oxy hóa, bảo vệ tế bào, làm chậm lão hóa.<br>
+            - Giảm cholesterol, tốt cho tim mạch.<br><br>
+            <strong>5. Cách sử dụng</strong><br>
+            - Cao lỏng: Pha loãng với nước ấm, uống trước bữa ăn.<br>
+            - Cao đặc: Hòa tan vào nước ấm.<br>
+            - Viên nang: Uống theo hướng dẫn nhà sản xuất.<br><br>
+            <strong>6. Bảo quản</strong><br>
+            - Để nơi khô ráo, thoáng mát, tránh ánh nắng.<br>
+            - Đậy kín nắp sau khi sử dụng để tránh ẩm mốc.<br><br>
+            <strong>7. Lưu ý khi sử dụng</strong><br>
+            - Không dùng quá liều lượng khuyến cáo.<br>
+            - Phụ nữ có thai, cho con bú nên hỏi ý kiến bác sĩ.<br>
+            - Chọn sản phẩm từ nguồn uy tín.<br>`, 'caoatiso.png')">
+                <img src="caoatiso.png" alt="Cao Atiso Sapa">
+                <h2>Cao Atiso Sapa</h2>
+                <p>Đặc sản Sapa</p>
+        </div>
+    </section>
+    
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="" style="max-width: 100%; height: auto;">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+    
+    <script>
+        function showProductDetails(title, description, image) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').innerHTML = description;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('productModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
