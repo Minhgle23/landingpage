@@ -108,7 +108,23 @@
             margin-bottom: 10px;
         }
 
-        
+        #blog {
+            margin-top: 50px;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .blog-post {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         
 
 
@@ -278,6 +294,80 @@
                 <p>Đặc sản Sapa</p>
         </div>
     </section>
+
+    <section id="blog">
+        <h2>Bài viết mới nhất</h2>
+        <div class="blog-container">
+            <article class="blog-post">
+                <h3>Cách làm món canh măng ngon</h3>
+                <!-- <a href="#" class="read-more" data-target="content-1">Đọc thêm</a> -->
+                <div id="content-1" class="blog-content hidden">
+                    <p>Để làm món canh măng ngon, bạn có thể tham khảo công thức sau đây:</p>
+                    <h4>Nguyên liệu:</h4>
+                    <ul>
+                        <li>Măng tươi hoặc măng khô: 300g</li>
+                        <li>Xương heo hoặc sườn non: 300g</li>
+                        <li>Hành khô, tỏi, hành lá, rau mùi</li>
+                        <li>Gia vị: muối, hạt nêm, đường, tiêu, nước mắm</li>
+                    </ul>
+                    <h4>Cách làm:</h4>
+                    <p><strong>Bước 1: Sơ chế nguyên liệu</strong></p>
+                    <ul>
+                        <li>Măng tươi: Rửa sạch, luộc 15-20 phút để loại bỏ vị đắng.</li>
+                        <li>Xương heo: Chần qua nước sôi để loại bỏ tạp chất.</li>
+                    </ul>
+                    <p><strong>Bước 2: Nấu canh</strong></p>
+                    <ul>
+                        <li>Phi thơm hành, xào xương cho săn.</li>
+                        <li>Thêm nước, đun nhỏ lửa 30-40 phút.</li>
+                        <li>Cho măng vào nấu thêm 15-20 phút.</li>
+                        <li>Nêm nếm gia vị vừa ăn.</li>
+                    </ul>
+                    <p><strong>Bước 3: Thưởng thức</strong></p>
+                    <p>Rắc hành lá, rau mùi và thưởng thức cùng cơm hoặc bún.</p>
+                    <!-- <button class="close-btn" data-target="content-1">Đóng</button> -->
+                </div>
+            </article>
+    
+            <article class="blog-post">
+                <h3>Măng khô xào thịt ba chỉ</h3>
+                <!-- <a href="#" class="read-more" data-target="content-2">Đọc thêm</a> -->
+                <div id="content-2" class="blog-content hidden">
+                    <p>Măng khô xào thịt ba chỉ</strong>.</p>
+    
+                    <h4>Nguyên liệu:</h4>
+                    <ul>
+                        <li>Măng khô: 200g</li>
+                        <li>Thịt ba chỉ (thịt heo ba rọi): 200g</li>
+                        <li>Hành khô, tỏi, hành lá, rau mùi</li>
+                        <li>Gia vị: muối, hạt nêm, đường, nước mắm, tiêu, dầu ăn</li>
+                    </ul>
+    
+                    <h4>Cách làm:</h4>
+                    <p><strong>Bước 1: Sơ chế nguyên liệu</strong></p>
+                    <ul>
+                        <li>Ngâm măng khô trong nước ấm qua đêm hoặc ít nhất 4-5 tiếng.</li>
+                        <li>Luộc măng khoảng 2-3 lần, mỗi lần 15 phút để măng mềm và bớt đắng.</li>
+                        <li>Rửa sạch thịt ba chỉ, thái lát mỏng vừa ăn.</li>
+                    </ul>
+    
+                    <p><strong>Bước 2: Xào măng khô với thịt ba chỉ</strong></p>
+                    <ul>
+                        <li>Phi thơm hành khô và tỏi băm nhỏ.</li>
+                        <li>Cho thịt ba chỉ vào xào săn, nêm gia vị.</li>
+                        <li>Thêm măng khô vào xào chung, đảo đều.</li>
+                        <li>Nêm lại gia vị cho vừa ăn.</li>
+                    </ul>
+    
+                    <p><strong>Bước 3: Thưởng thức</strong></p>
+                    <p>Rắc hành lá, rau mùi và thưởng thức cùng cơm nóng.</p>
+                    <!-- <button class="close-btn" data-target="content-2">Đóng</button> -->
+                </div>
+            </article>
+        </div>
+    </section>
+    
+
     <footer>
         <div class="footer-benefits">
             <div>
@@ -310,6 +400,29 @@
         </div>
     </div>
     
+
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const readMoreLinks = document.querySelectorAll(".read-more");
+            const closeButtons = document.querySelectorAll(".close-btn");
+    
+            readMoreLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute("data-target");
+                    document.getElementById(targetId).classList.remove("hidden");
+                });
+            });
+    
+            closeButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const targetId = this.getAttribute("data-target");
+                    document.getElementById(targetId).classList.add("hidden");
+                });
+            });
+        });
+    </script>
     
     
     <script>
@@ -322,6 +435,11 @@
         function closeModal() {
             document.getElementById('productModal').style.display = 'none';
         }
+        window.onclick = function(event) {
+        if (event.target == document.getElementById('productModal')) {
+            closeModal();
+        }
+    }
     </script>
 </body>
 </html>
